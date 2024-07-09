@@ -36,8 +36,7 @@ class Numbers extends Node {
     List<String> dependencies() {
         List<String> dependencies = new ArrayList<>();
         for(char c : getVal().toCharArray()) {
-            // words and single characters consist of a-z letters (only lower case).
-            dependencies.add(String.valueOf(c).toLowerCase());
+            dependencies.add(String.valueOf(c));
         }
         return dependencies;
     }
