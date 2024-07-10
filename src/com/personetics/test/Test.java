@@ -29,8 +29,8 @@ class Words extends Node {
     }
 }
 class Numbers extends Node {
-    public Numbers(String val) {
-        super(val);
+    public Numbers(int val) {
+        super(String.valueOf(val));
     }
     @Override
     List<String> dependencies() {
@@ -47,6 +47,7 @@ class ChainValidator {
     public static boolean validadate(List<Node> nodes) {
         Set<String> setValues = new HashSet<>();
         for (Node node : nodes) {
+            System.out.println(node.dependencies().size());
             if (node.dependencies().size() == 1) {
                 setValues.add(node.dependencies().get(0));
             }
@@ -79,16 +80,16 @@ public class Test {
         );
 
         List<Node> validNum = Arrays.asList(
-                new Numbers("36"),
-                new Numbers("6"),
-                new Numbers("3")
+                new Numbers(36),
+                new Numbers(6),
+                new Numbers(3)
         );
 
         List<Node> invalidNum = Arrays.asList(
-                new Numbers("7"),
-                new Numbers("3"),
-                new Numbers("32"),
-                new Numbers("42")
+                new Numbers(7),
+                new Numbers(3),
+                new Numbers(32),
+                new Numbers(42)
         );
 
         System.out.println("Valid return of validWord1: " + ChainValidator.validadate(validWord1));
