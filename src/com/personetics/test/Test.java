@@ -93,7 +93,7 @@ public class Test {
         );
 
         System.out.println("Valid return of validWord1: " + ChainValidator.validadate(validWord1));
-        System.out.println("Valid return of validNum1: " + ChainValidator.validadate(validNum));
+        System.out.println("Valid return of validNum: " + ChainValidator.validadate(validNum));
         System.out.println("Invalid return of invalidNum: " + ChainValidator.validadate(invalidNum));
 
     }
