@@ -35,8 +35,11 @@ class Numbers extends Node {
     @Override
     List<String> dependencies() {
         List<String> dependencies = new ArrayList<>();
-        for(char c : getVal().toCharArray()) {
-            dependencies.add(String.valueOf(c));
+        // one digit and two-digit numbers
+        if(getVal().length() <= 2 && getVal().length() >=1) {
+            for(char c : getVal().toCharArray() ) {
+                dependencies.add(String.valueOf(c));
+            }
         }
         return dependencies;
     }
