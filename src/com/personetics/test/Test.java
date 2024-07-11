@@ -47,7 +47,6 @@ class ChainValidator {
     public static boolean validadate(List<Node> nodes) {
         Set<String> setValues = new HashSet<>();
         for (Node node : nodes) {
-            System.out.println(node.dependencies().size());
             if (node.dependencies().size() == 1) {
                 setValues.add(node.dependencies().get(0));
             }
